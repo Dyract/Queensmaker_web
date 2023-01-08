@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Queensmaker</title>
+</head>
+<body>
+    <!-- 게임 전체를 감싸는 틀-->
+    <div class="game_wrapper">
+        <div class="bg_wrapper">
+            <!--사이드바-->
+            <div class="sidebar">
+                <button class="goto_shop" onclick="location.href='shop.html'"></button >
+                <button class="goto_inventory" onclick="location.href='inventory.html'"></button > 
+                <button class="show_money">
+                    <div class="chicken_area"></div>
+                    <div class="money_area">1000000</div>
+                </button > 
+            </div>
+
+            <!--게임창-->
+            <div class="mainpage">
+                <div class="img_wrapper">
+                    <img class="step_img"
+                    src="./images/step_img/28.png">
+                        
+                </div>
+                <div class="outofimg_wrapper">
+                    <div class="buttons_wrapper">
+                        <button class="sell_button">팔기</button>
+                        <button class="reinforce_button"></button>
+                    </div>
+                    <div class="explain_text">
+                        이 편지는 영국에서 시작되어 어쩌구저쩌구
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
