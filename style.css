@@ -45,6 +45,38 @@ body {
   /* border: 1px solid blueviolet; */
 }
 
+.show_money {
+  background: url("./images/icon1.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+}
+
+.chicken_area {
+  position: relative;
+  left: 23px;
+  top: 10px;
+  width: 90px;
+  height : 90px;
+  /* border: 1px solid rebeccapurple; */
+  background-image: url("./images/money.png");
+  background-size: cover;
+}
+
+.money_area {
+  width: 200px;
+  height : 90px;
+  position: relative;
+  left: 23px;
+  top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Dokdo' !important;
+  font-size: xx-large;
+  /* border: 1px solid black; */
+}
+
 
 /* 시작페이지 틀 */
 .start_wrapper {
