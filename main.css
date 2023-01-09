@@ -137,3 +137,49 @@
     justify-content: center;
     align-items: center;
 }
+
+/* 게임오버시 팝업창 */
+.black_background{
+    display: none;
+    position: absolute;
+    /* top: 0%;
+    left: 0%; */
+    width: 1080px;
+    height: 720px;
+    background: #666666 ;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=60);
+  }
+  
+  #light{
+    display: none;
+    position: absolute;
+    padding: 16px;
+    width:1080px;
+    height: 720px;
+    /* border: 16px solid #E3F2FC; */
+    background-image: url("./images/destroy-img.png");
+    z-index:1002;
+    overflow: auto;
+  }
+
+  .gameover_page{
+    position: absolute;
+    width:1048px;
+    height: 680px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid purple; */
+  }
+
+  .destroyed_message {
+    font-size: xx-large;
+    font-weight: bold;
+    color: red;
+    text-shadow: 3px 3px 3px black;
+    margin-bottom: 20px;
+  }

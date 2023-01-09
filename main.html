@@ -7,8 +7,18 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="main.css">
     <title>Queensmaker</title>
+
+    <!-- <script>
+        function popup(){
+            var url = "gameover.html";
+            var name = "gameover";
+            window.open(url,name);
+        }
+    </script> -->
+
 </head>
 <body>
+    
     <!-- 게임 전체를 감싸는 틀-->
     <div class="game_wrapper">
         <div class="bg_wrapper">
@@ -31,8 +41,8 @@
                 </div>
                 <div class="outofimg_wrapper">
                     <div class="buttons_wrapper">
-                        <button class="sell_button">팔기</button>
-                        <button class="reinforce_button"></button>
+                        <button class="sell_button" >팔기</button>
+                        <button class="reinforce_button" onclick="showGameover();"></button>
                     </div>
                     <div class="explain_text">
                         이 편지는 영국에서 시작되어 어쩌구저쩌구
@@ -42,4 +52,18 @@
         </div>
     </div>
 
+    <!-- 전체 배경화면을 어둡게 하기 위한 div -->
+    <div id="fade" class="black_background"></div>
+    <!-- 게임오벼 화면 -->
+    <div id="light" >
+        <div class="gameover_page">
+            <div class="destroyed_message">무드등이 파괴되었습니다.</div>
+            <button class="close_button" onclick="closeGameover();">다시하기</button>
+        </div>
+
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <script type="text/javascript" src="main.js"></script>
 </body>
+

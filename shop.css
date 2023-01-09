@@ -36,7 +36,169 @@
 }
 
 /*메인페이지*/
-.mainpage {
+.shop {
     height: 550px;
     /* border: 1px solid black; */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction:column;
+    align-items: center;
+}
+
+/* 아이템창 */
+.items_wrapper {
+    margin-top: 30px;
+    height: 340px;
+    width : 1000px;
+    /* border: 1px solid purple; */
+    display: flex;
+    flex-direction: row;
+}
+
+.item_container button {
+    margin: 10px;
+    width: 230px;
+    height: 230px;
+    /* border: 1px solid blue; */
+}
+
+.item_script_wrapper {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 230px;
+    height: 80px;
+    /* border: 1px solid blue; */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction:column;
+    align-items: center;
+}
+
+.school_uniform {
+    background-image: url("./images/school_uniform.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+}
+
+.school_uniform:visited {
+    background-image: url("./images/school_uniform_hover.png");
+    background-size: cover;
+}
+
+.made_uniform {
+    background-image: url("./images/made_uniform.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+}
+
+.magic_uniform {
+    background-image: url("./images/magic_uniform.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+}
+
+.pocari_sweat {
+    background-image: url("./images/magic_uniform.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+}
+
+
+
+.item_name { font-size: 25px; }
+.item_script { margin-top: 10px;}
+
+/* 버튼창 */
+.buttons_wrapper {
+    margin-top: 20px;
+    padding-left: 20px;
+    width: 1000px;
+    height: 120px;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttons_wrapper img {
+    margin-left: 40px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    position:relative;
+    bottom: 8px;
+}
+
+#arrow {
+    width: 80px;
+    height: 100px;
+}
+
+.before_button {
+    background-image: url("./images/icon_before_arrow.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+}
+
+.before_button:active {
+    background-image: url("./images/icon_before_arrow_click.png");
+    background-size: cover;
+}
+
+.next_button {
+    background-image: url("./images/icon_next_arrow.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+    position:relative;
+    top: 5px;
+}
+
+.next_button:active {
+    background-image: url("./images/icon_next_arrow_click.png");
+    background-size: cover;
+}
+
+.count_text {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.price_text {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+    margin-left: 20px;
+    font-size: larger;
+    /* border: 1px solid purple; */
+}
+
+.buy_button {
+    width: 310px;
+    height: 100px;
+    margin-left: 20px;
+    background: url("./images/icon1.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+}
+
+.buy_button:active {
+    background: url("./images/icon1_click.png");
+    background-size: cover;
 }
