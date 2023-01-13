@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,32 +36,46 @@
             <!--게임창-->
             <div class="mainpage">
                 <div class="img_wrapper">
-                    <img class="step_img"
-                    src="./images/step_img/28.png">
+                    <div id="step_name" class="step_name">+0 방울</div>
+                    <img id="step_img" class="step_img"
+                    src="./images/step_img/0.png">
                         
                 </div>
                 <div class="outofimg_wrapper">
                     <div class="buttons_wrapper">
                         <div class="buttons_wrapper2">
                             <button class="sell_button" ></button>
-                            <div class="checkbox_wrapper">
-                                <input class="protect_checkbox" type="checkbox" name="xxx" value="yyy" unchecked></input>
+                            <div id="protect" class="checkbox_wrapper">
+                                <input id="protect_checkbox" class="protect_checkbox" type="checkbox" name="xxx" value="yyy" unchecked></input>
                                 <div class="protect_text">파괴방지</div>
                             </div>
-                            
-                        </div>
-                        <button class="reinforce_button" onclick="showGameover();"></button>
+                            <div id="protect_needs" class="pocari_needs_wrapper">
+                                <div class="cost_text">포카리나</div>
+                                <div id="protect_cost" class="cost_text">3</div>
+                                <div class="cost_text">개 필요</div>
+                            </div>
+                        </div> 
+                        <button class="reinforce_button" onclick="reinforce();"></button>
                     </div>
                     <div class="explain_text_wrapper">
-                        <div class="cost_wrapper">
-                            <div class="cost_text">판매비용:</div>
-                            <div class="cost_amount">10000</div>
+                        <div class="cost_probability_wrapper">
+                            <div class="costs_wrapper">
+                                <div class="cost_wrapper">
+                                    <div class="cost_text">판매비용:</div>
+                                    <div id="sell_cost_amount" class="cost_amount">10000</div>
+                                </div>
+                                <div class="cost_wrapper">
+                                    <div class="cost_text">강화비용:</div>
+                                    <div id="reinforce_cost_amount"  class="cost_amount">10000</div>
+                                </div>
+                            </div>
+                            <div class="probability_wrapper">
+                                <div class="probability_text">강화확률:</div>
+                                <div id="probability_amount" class="probability_amount">80</div>
+                                <div class="probability_amount">%</div>
+                            </div>
                         </div>
-                        <div class="cost_wrapper">
-                            <div class="cost_text">강화비용:</div>
-                            <div class="cost_amount">10000</div>
-                        </div>
-                        <div class="explain_text">새 식구 등장! 구름이와 함께 있는 무드등</div>
+                        <div id="script" class="explain_text">새 식구 등장! 구름이와 함께 있는 무드등</div>
                     </div>
                 </div>
             </div>
@@ -78,7 +93,18 @@
 
     </div>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script> 
+    <!-- 파괴방지 실패 화면 -->
+    <div id="light2" >
+        <div class="gameover_page">
+            <div class="destroyed_message">포카리스웨트가 부족해 파괴방지를 할 수 없습니다.</div>
+            <button class="close_button" onclick="closeGameover2();">계속하기</button>
+        </div>
+
+    </div>
+
+
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script>  -->
+    <!-- <script type="moudle" src="./main.js"></script> -->
     <script type="text/javascript" src="main.js"></script>
 </body>
 
