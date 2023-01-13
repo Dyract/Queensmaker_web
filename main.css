@@ -101,6 +101,16 @@
     left: 10px;
 }
 
+.protect_checkbox { display: none; }
+.protect_text{ display: none; }
+.protect_text2{ display: none; }
+
+.protect_text2{
+    font-size: 25px; 
+    font-family: 'Dokdo';
+    margin-right: 6px;
+}
+
 .sell_button {
     height: 150px;
     width: 240px;
@@ -273,6 +283,18 @@
   }
 
   #light2{
+    display: none;
+    position: absolute;
+    padding: 16px;
+    width:1080px;
+    height: 720px;
+    /* border: 16px solid #E3F2FC; */
+    /* background-image: url("./images/destroy-img.png"); */
+    z-index:1007;
+    overflow: auto;
+  }
+
+  #light3{
     display: none;
     position: absolute;
     padding: 16px;
