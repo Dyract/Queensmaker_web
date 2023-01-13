@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,16 @@
     <title>Queensmaker</title>
 </head>
 <body>
+
+    <!-- <script>
+        function updateMoney(){
+            $('#money_shop').text(Belonging_data.money);
+            console.log("상점 Money 업데이트");
+        }
+
+        document.addEventListener("DOMContentLoaded", updateMoney);
+    </script> -->
+
     <!-- 게임 전체를 감싸는 틀-->
     <div class="game_wrapper">
         <div class="bg_wrapper">
@@ -18,7 +29,7 @@
                 <button class="goto_inventory" onclick="location.href='inventory.html'"></button > 
                 <button class="show_money">
                     <div class="chicken_area"></div>
-                    <div class="money_area">1000000</div>
+                    <div id="money_shop" class="money_area">1000000</div>
                 </button > 
             </div>
 
@@ -60,11 +71,14 @@
                     <button id="arrow" class="next_button"></button>
                     <img src="./images/money.png">
                     <div class="price_text">10000</div>
-                    <button class="buy_button">구매</button>
+                    <button id="buy" class="buy_button" onclick="buyItem();">구매</button>
                 </div>
             </div>
         </div>
 
     </div>
+
+
+    <script type="text/javascript" src="main.js"></script>
 
 </body>

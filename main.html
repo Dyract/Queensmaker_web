@@ -29,7 +29,7 @@
                 <button class="goto_inventory" onclick="location.href='inventory.html'"></button > 
                 <button class="show_money">
                     <div class="chicken_area"></div>
-                    <div class="money_area">1000000</div>
+                    <div id="money_main" class="money_area">1000000</div>
                 </button > 
             </div>
 
@@ -96,7 +96,7 @@
     <!-- 파괴방지 실패 화면 -->
     <div id="light2" >
         <div class="gameover_page">
-            <div class="destroyed_message">포카리스웨트가 부족해 파괴방지를 할 수 없습니다.</div>
+            <div class="destroyed_message">포카리나가 부족해 파괴방지를 할 수 없습니다.</div>
             <button class="close_button" onclick="closeGameover2();">계속하기</button>
         </div>
 
@@ -106,7 +106,7 @@
     <div id="light3" >
         <div class="gameover_page">
             <div class="destroyed_message">포카리나의 힘으로 무드등 파괴를 막았습니다.</div>
-            <button class="close_button" onclick="closeGameover2();">계속하기</button>
+            <button class="close_button" onclick="closeGameover3();">계속하기</button>
         </div>
 
     </div>
@@ -114,6 +114,8 @@
 
     <!-- <script src="http://code.jquery.com/jquery-latest.js"></script>  -->
     <!-- <script type="moudle" src="./main.js"></script> -->
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="main.js"></script>
+    
 </body>
 
