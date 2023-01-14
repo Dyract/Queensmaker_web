@@ -29,7 +29,7 @@
                 <button class="goto_inventory" onclick="location.href='inventory.html'"></button > 
                 <button class="show_money">
                     <div class="chicken_area"></div>
-                    <div id="money_shop" class="money_area">1000000</div>
+                    <div id="money_shop" class="money_area"></div>
                 </button > 
             </div>
 
@@ -37,38 +37,45 @@
             <div class="shop">
                 <div class="items_wrapper">
                     <div class="item_container">
-                        <button class="school_uniform"></button>
+                        <button id="pocari_button" class="pocari_sweat"
+                        onclick="select_pocarina()"></button>
+                        <div class="item_script_wrapper"> 
+                            <div class="item_name">포카리나</div>
+                            <div class="item_script">무드등 파괴를 1회 방지한다.</div>
+                        </div>
+                    </div>
+                    <div class="item_container">
+                        <button id="school_uniform_button" class="school_uniform"
+                        onclick="select_school_uniform()"></button>
                         <div class="item_script_wrapper"> 
                             <div class="item_name">교복</div>
                             <div class="item_script">15강으로 워프한다.</div>
                         </div>
                     </div>
                     <div class="item_container">
-                        <button class="made_uniform"></button>
+                        <button id="made_uniform_button" class="made_uniform"
+                        onclick="select_made_uniform()"></button>
                         <div class="item_script_wrapper"> 
                             <div class="item_name">메이드복</div>
                             <div class="item_script">20강으로 워프한다.</div>
                         </div>
                     </div>
                     <div class="item_container">
-                        <button class="magic_uniform"></button>
+                        <button id="magic_uniform_button" class="magic_uniform"
+                        onclick="select_magic_uniform()"></button>
                         <div class="item_script_wrapper"> 
                             <div class="item_name">마법소녀</div>
                             <div class="item_script">25강으로 워프한다.</div>
                         </div>
                     </div>
-                    <div class="item_container">
-                        <button class="pocari_sweat"></button>
-                        <div class="item_script_wrapper"> 
-                            <div class="item_name">포카리나</div>
-                            <div class="item_script">무드등 파괴를 1회 방지한다.</div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="buttons_wrapper">
-                    <button id="arrow" class="before_button"></button>
-                    <div class="count_text">3</div>
-                    <button id="arrow" class="next_button"></button>
+                    <button id="before_button" class="before_button"
+                    onclick="count_item_down()"></button>
+                    <div id="count_item" class="count_text">0</div>
+                    <button id="next_button" class="next_button"
+                    onclick="count_item_up()"></button>
                     <img src="./images/money.png">
                     <div class="price_text">10000</div>
                     <button id="buy" class="buy_button" onclick="buyItem();">구매</button>
@@ -78,7 +85,7 @@
 
     </div>
 
-
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="main.js"></script>
 
 </body>

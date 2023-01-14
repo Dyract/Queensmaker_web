@@ -12,6 +12,8 @@ let Belonging_data = {
   magic_uniform : 0
 }
 
+const Item_data = [1000000, 14200000, 101000000, 1800000000]
+
 
 const Step_data = [
   {
