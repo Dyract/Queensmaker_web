@@ -8,11 +8,11 @@ let Belonging_data = {
   money : 0,
   pocari_sweat : 0,
   school_uniform : 0,
-  made_unifotm : 0,
+  made_uniform : 0,
   magic_uniform : 0
 }
 
-const Item_data = [1000000, 14200000, 101000000, 1800000000]
+const Item_data = [1000, 14200000, 101000000, 1800000000]
 
 
 const Step_data = [

@@ -28,30 +28,42 @@
                 <div class="item_wrapper">
                     <img id="item_img" class="item_img"
                     src="./images/pocari.png">
-                    <div class="item_name">포카리나</div>
-                    <div class="item_count">0</div>
-                    <button class="item_use">사용하기</button>
+                    <div class="item_name">
+                        <div class="item_name">포카리나</div>
+                        <div class="item_script">무드등 파괴를 1회 방지한다.</div>
+                    </div>
+                    <div id="pocari_count" class="item_count">0</div>
+                    <button class="item_use_pocari">사용하기</button>
                 </div>
                 <div class="item_wrapper">
                     <img id="item_img" class="item_img"
                     src="./images/school_uniform.png">
-                    <div class="item_name">교복</div>
-                    <div class="item_count">0</div>
-                    <button class="item_use">사용하기</button>
+                    <div class="item_name">
+                        <div class="item_name">교복</div>
+                        <div class="item_script">15강으로 워프한다.</div>
+                    </div>
+                    <div id="school_uniform_count" class="item_count">0</div>
+                    <button class="item_use" onclick="use_school_uniform()">사용하기</button>
                 </div>
                 <div class="item_wrapper">
                     <img id="item_img" class="item_img"
                     src="./images/made_uniform.png">
-                    <div class="item_name">메이드복</div>
-                    <div class="item_count">0</div>
-                    <button class="item_use">사용하기</button>
+                    <div class="item_name">
+                        <div class="item_name">메이드복</div>
+                        <div class="item_script">20강으로 워프한다.</div>
+                    </div>
+                    <div id="made_uniform_count" class="item_count">0</div>
+                    <button class="item_use" onclick="use_made_uniform()">사용하기</button>
                 </div>
                 <div class="item_wrapper">
                     <img id="item_img" class="item_img"
                     src="./images/magic_uniform.png">
-                    <div class="item_name">마법소녀복</div>
-                    <div class="item_count">0</div>
-                    <button class="item_use">사용하기</button>
+                    <div class="item_name">
+                        <div class="item_name">마법소녀복</div>
+                        <div class="item_script">25강으로 워프한다.</div>
+                    </div>
+                    <div id="magic_uniform_count" class="item_count">0</div>
+                    <button class="item_use" onclick="use_magic_uniform()">사용하기</button>
                 </div>
 
 

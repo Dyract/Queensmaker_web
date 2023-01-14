@@ -9,6 +9,7 @@ if (storageItems) {
 // console.log(Belonging_data)
 step_data_show();
 money_data_show();
+inventory_show()
 
 
 // ************* //
@@ -31,7 +32,7 @@ function reinforce() {
     //파괴방지가 체크되어 있을 경우
     if($('#protect_checkbox').is(':checked')) {
       //방지권이 부족한 경우 파괴방지 실패
-      if(Belonging_data.pocari_sweat < Step_data[Belonging_data.nowstep].protect_cost) {
+      if(Belonging_data.pocari_sweat < Step_data[Belonging_data.nowstep].protect_cost || Belonging_data.nowstep < 15) {
         protect_fail()
       }
       //방지권이 충분한 경우 방지권 소모 후 현상유지
@@ -49,6 +50,15 @@ function reinforce() {
 
 }
 
+//팔기 함수
+function sell() {
+  Belonging_data.money = Belonging_data.money + Step_data[Belonging_data.nowstep].sell_cost
+  money_data_show()
+  Belonging_data.nowstep = 0;
+  step_data_show();
+
+  localStorage.setItem("UserData", JSON.stringify(Belonging_data))
+}
 
 
 //강화 성공 시
@@ -200,12 +210,16 @@ function count_item_up() {
 
 //아이템 구매버튼을 누를 시
 function buyItem() {
-  if (selected === 0 || Belonging_data.money < ((num_of_item+1)*Item_data[selected-1])) {
+  if (selected === 0 || Belonging_data.money < ((num_of_item)*Item_data[selected-1])) {
+    console.log((num_of_item)*Item_data[selected-1])
+    console.log(Belonging_data.money)
     console.log("구매 실패")
     return;
   }
   else {
     Belonging_data.money = Belonging_data.money - Item_data[selected-1]*num_of_item
+    items_to_inventory()
+
     num_of_item = 0;
     selected = 0;
     $('#school_uniform_button').css({"background-image":"url(./images/school_uniform.png)"});
@@ -214,14 +228,64 @@ function buyItem() {
     $('#pocari_button').css({"background-image":"url(./images/pocari.png)"});
     money_data_show()
     show_shop()
+    localStorage.setItem("UserData", JSON.stringify(Belonging_data))
   }
+}
 
+//아이템 인벤토리에 넣기
+function items_to_inventory() {
+  if (selected===1) { Belonging_data.pocari_sweat = Belonging_data.pocari_sweat + num_of_item }
+  else if (selected===2){ Belonging_data.school_uniform = Belonging_data.school_uniform + num_of_item }
+  else if (selected===3){ Belonging_data.made_uniform = Belonging_data.made_uniform + num_of_item }
+  else if (selected===4){ Belonging_data.magic_uniform = Belonging_data.magic_uniform + num_of_item }
 }
 
 //상점 아이템개수, 가격 보이기
 function show_shop() {
   $('#count_item').text(num_of_item);
   $('#price').text(Item_data[selected-1]*num_of_item);
+}
+
+// ******** //
+//  인벤토리  //
+// ******* //
+//교복 사용
+function use_school_uniform() {
+  if (Belonging_data.school_uniform === 0) {
+    return;
+  }
+  else {
+    Belonging_data.nowstep = 15;
+    Belonging_data.school_uniform = Belonging_data.school_uniform - 1;
+    localStorage.setItem("UserData", JSON.stringify(Belonging_data))
+    location.href="main.html"
+  }
+}
+
+//메이드복 사용
+function use_made_uniform() {
+  if (Belonging_data.made_uniform === 0) {
+    return;
+  }
+  else {
+    Belonging_data.nowstep = 20;
+    Belonging_data.made_uniform = Belonging_data.made_uniform - 1;
+    localStorage.setItem("UserData", JSON.stringify(Belonging_data))
+    location.href="main.html"
+  }
+}
+
+//마법소녀복 사용
+function use_magic_uniform() {
+  if (Belonging_data.magic_uniform === 0) {
+    return;
+  }
+  else {
+    Belonging_data.nowstep = 25;
+    Belonging_data.magic_uniform = Belonging_data.magic_uniform - 1;
+    localStorage.setItem("UserData", JSON.stringify(Belonging_data))
+    location.href="main.html"
+  }
 }
 
 // ***** //
@@ -231,15 +295,15 @@ function show_shop() {
 //단계에 따른 값 보여주기
 function step_data_show() {
   //만약 15강이라면 파괴방지 보이기
-  if (Belonging_data.nowstep == 15) {
+  if (Belonging_data.nowstep >= 15) {
     $('#protect').show();
     $('#protect_checkbox').show();
     $('#protect_needs1').show();
     $('#protect_cost').show();
     $('#protect_needs2').show();
   }
-  //30강일 시 파괴방지 숨기기
-  if (Belonging_data.nowstep == 30) {
+  //15강 이내이거나 30강일 시 파괴방지 숨기기
+  if (Belonging_data.nowstep < 15 || Belonging_data.nowstep == 30) {
     $('#protect').hide();
     $('#protect_checkbox').hide();
     $('#protect_needs1').hide();
@@ -262,5 +326,14 @@ function money_data_show() {
   $('#money_shop').text(Belonging_data.money);
   $('#money_inventory').text(Belonging_data.money);
   $('#money_main').text(Belonging_data.money);
+}
+
+//인벤토리 업데이트
+function inventory_show() {
+  console.log("인벤토리 출력")
+  $('#pocari_count').text(Belonging_data.pocari_sweat);
+  $('#school_uniform_count').text(Belonging_data.school_uniform);
+  $('#made_uniform_count').text(Belonging_data.made_uniform);
+  $('#magic_uniform_count').text(Belonging_data.magic_uniform);
 }
 
