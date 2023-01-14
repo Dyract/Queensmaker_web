@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Nanum+Brush+Script&display=swap');
+
 /*사이드바*/
 .goto_shop {
     background: url("./images/icon_shop.png");
@@ -39,15 +41,69 @@
 /*메인페이지*/
 .inventory {
     height: 550px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     /* justify-content: center; */
     flex-direction:column;
     align-items: center;
+    padding-top: 20px;
 }
 
 .item_wrapper {
-    border: 1px solid seagreen;
+    /* border: 1px solid seagreen; */
     width: 1000px;
-    height: 130px;
+    height: 120px;
+    margin-top: 5px;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction:row;
+    align-items: center;
+}
+
+.item_wrapper img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.item_wrapper div {
+    font-size: 40px; 
+    font-family: 'Dokdo' !important;
+}
+
+.item_name {
+    /* border: 1px solid purple; */
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    /* flex-direction:row; */
+    align-items: center;
+}
+
+.item_count {
+    /* border: 1px solid purple; */
+    width: 220px;
+    display: flex;
+    justify-content: center;
+    /* flex-direction:row; */
+    align-items: center;
+}
+
+.item_use {
+    width: 310px;
+    height: 100%;
+    background: url("./images/icon1.png");
+    background-size: cover;
+    background-color:transparent;
+    border: none;
+    font-family: 'Dokdo' !important;
+    font-size:xx-large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item_use:active {
+    background: url("./images/icon1_click.png");
+    background-size: cover;
 }
