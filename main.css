@@ -245,7 +245,7 @@
     width: 1080px;
     height: 720px;
     background: #666666 ;
-    z-index:1001;
+    z-index:1000;
     -moz-opacity: 0.8;
     opacity:.80;
     filter: alpha(opacity=60);
@@ -259,7 +259,7 @@
     height: 720px;
     /* border: 16px solid #E3F2FC; */
     background-image: url("./images/destroy-img.png");
-    z-index:1003;
+    z-index:1001;
     overflow: auto;
   }
 
@@ -297,7 +297,7 @@
     height: 720px;
     /* border: 16px solid #E3F2FC; */
     /* background-image: url("./images/destroy-img.png"); */
-    z-index:1007;
+    z-index:1003;
     overflow: auto;
   }
 
@@ -309,6 +309,18 @@
     height: 720px;
     /* border: 16px solid #E3F2FC; */
     /* background-image: url("./images/destroy-img.png"); */
-    z-index:1007;
+    z-index:1004;
+    overflow: auto;
+  }
+
+  #light4{
+    display: none;
+    position: absolute;
+    padding: 16px;
+    width:1080px;
+    height: 720px;
+    /* border: 16px solid #E3F2FC; */
+    /* background-image: url("./images/destroy-img.png"); */
+    z-index:1005;
     overflow: auto;
   }
