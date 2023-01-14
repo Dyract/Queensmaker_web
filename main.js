@@ -2,7 +2,9 @@
 const storageItems = JSON.parse(localStorage.getItem("UserData"))
 console.log(localStorage.getItem("UserData"))
 console.log(storageItems)
-Belonging_data = storageItems
+if (storageItems) {
+  Belonging_data = storageItems
+}
 step_data_show();
 
 
