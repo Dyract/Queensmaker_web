@@ -25,22 +25,30 @@ function reinforce() {
   
   random_number = Math.floor(Math.random() * 101); //랜덤값 생성
 
-  if(random_number <= Step_data[Belonging_data.nowstep].probability){ //확률계산
-    reinforce_success();
-  }
-  else {
-    //파괴방지가 체크되어 있을 경우
-    if($('#protect_checkbox').is(':checked')) {
-      //방지권이 부족한 경우 파괴방지 실패
-      if(Belonging_data.pocari_sweat < Step_data[Belonging_data.nowstep].protect_cost || Belonging_data.nowstep < 15) {
-        protect_fail()
-      }
-      //방지권이 충분한 경우 방지권 소모 후 현상유지
-      else {
-        Belonging_data.pocari_sweat = Belonging_data.pocari_sweat - Step_data[Belonging_data.nowstep].protect_cost;
-        protect_success()
-      }
+  //파괴방지가 체크되어 있을 경우
+  if ($('#protect_checkbox').is(':checked')) {
+    //방지권이 부족한 경우 파괴방지 실패
+    if(Belonging_data.pocari_sweat < Step_data[Belonging_data.nowstep].protect_cost || Belonging_data.nowstep < 15) {
+      protect_fail()
     }
+    //성공 시 방지권 차감 및 다음단계
+    else if (random_number <= Step_data[Belonging_data.nowstep].probability) {
+      Belonging_data.pocari_sweat = Belonging_data.pocari_sweat - Step_data[Belonging_data.nowstep].protect_cost;
+      reinforce_success();
+    }
+    //방지권이 충분한 경우 방지권 차감 후 현상유지
+    else {
+      Belonging_data.pocari_sweat = Belonging_data.pocari_sweat - Step_data[Belonging_data.nowstep].protect_cost;
+      protect_success()
+    }
+  }
+  //파괴방지가 체크되어 있지 않을 경우
+  else {
+    //성공 시 다음단계로
+    if(random_number <= Step_data[Belonging_data.nowstep].probability){
+      reinforce_success();
+    }
+    //실패 시 리제로
     else {
       reinforce_fail()
     }
@@ -119,6 +127,7 @@ function closeGameover() {
 
 // 게임오버 창 띄우기
 function showGameover() {
+  $('#destroyed_step').text(Step_data[Belonging_data.nowstep].name);
   // console.log("버튼")
   $('#fade').show();
   $('#light').show();
@@ -249,6 +258,7 @@ function show_shop() {
 // ******** //
 //  인벤토리  //
 // ******* //
+
 //교복 사용
 function use_school_uniform() {
   if (Belonging_data.school_uniform === 0) {
@@ -303,7 +313,7 @@ function step_data_show() {
     $('#protect_needs2').show();
   }
   //15강 이내이거나 30강일 시 파괴방지 숨기기
-  if (Belonging_data.nowstep < 15 || Belonging_data.nowstep == 30) {
+  else {
     $('#protect').hide();
     $('#protect_checkbox').hide();
     $('#protect_needs1').hide();
