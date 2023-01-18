@@ -8,7 +8,7 @@ if (storageItems) {
   Belonging_data = storageItems
 }
 // console.log(Belonging_data)
-Belonging_data.money = 10000000000;
+Belonging_data.money = 10000000;
 // Belonging_data.nowstep = 0;
 step_data_show();
 money_data_show();
