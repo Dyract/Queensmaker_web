@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,15 @@
 </head>
 <body>
     <!-- 게임 전체를 감싸는 틀-->
-    <div class="start_wrapper">
+    <div id="background_start" class="start_wrapper">
+        <img  class="background_start" src="./images/background_start.png">
+        
         <!--게임스타트-->
-        <a href="#" class="goto_main" onclick="location.href='main.html'">Press to Game Start</a>
+        <a href="#" id="goto_main" class="goto_main" onclick="location.href='main.html'">Press to Game Start</a>
     </div>
+    <img id="logo" class="logo" src="./images/logo.png">
+
+
+    <script type="text/javascript" src="index.js"></script>
 
 </body>

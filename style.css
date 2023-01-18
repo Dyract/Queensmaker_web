@@ -83,25 +83,42 @@ body {
 
 /* 시작페이지 틀 */
 .start_wrapper {
-  position: relative;
+  position: absolute;
+  overflow: hidden;
+  object-fit: cover;
   width: 1080px;
   height: 720px;
   /*border: 1px solid blue;*/
-  display: flex;
+  display:flex;
   flex-direction : column;
-  background-image: url('./images/background_start.png');
-  padding-bottom : 4px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* background-image: url('./images/background_start.png'); */
   border : 1px solid black;
+}
+
+.background_start {
+  display: block;
 }
 
 /* press to game start */
 .goto_main {
+  display: none;
   position: absolute;
   width: 100%;
-  top : 80%;
-  color: palevioletred;
+  top : 75%;
+  font-family: 'Dokdo' !important;
+  color: rgb(240, 38, 105);
   text-align: center;
-  font-size: 30px;
+  font-size: 40px;
+  
 }
 
-
+.logo {
+  display: none;
+  position: relative;
+  width: 700px;
+  bottom : 70px;
+  z-index:5;
+  /* border: solid 1px purple; */
+}
