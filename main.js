@@ -3,10 +3,13 @@ const storageItems = JSON.parse(localStorage.getItem("UserData"))
 console.log(localStorage.getItem("UserData"))
 // console.log(storageItems)
 // console.log(Belonging_data)
+
 if (storageItems) {
   Belonging_data = storageItems
 }
 // console.log(Belonging_data)
+Belonging_data.money = 1000000;
+// Belonging_data.nowstep = 0;
 step_data_show();
 money_data_show();
 inventory_show()
@@ -31,7 +34,7 @@ function reinforce() {
   //파괴방지가 체크되어 있을 경우
   else if ($('#protect_checkbox').is(':checked')) {
     //방지권이 부족한 경우 파괴방지 실패
-    if(Belonging_data.pocari_sweat < Step_data[Belonging_data.nowstep].protect_cost || Belonging_data.nowstep < 15) {
+    if(Belonging_data.pocari_sweat < Step_data[Belonging_data.nowstep].protect_cost || Belonging_data.nowstep < 10) {
       protect_fail()
     }
     //성공 시 방지권 차감 및 다음단계
@@ -70,6 +73,8 @@ function sell() {
   step_data_show();
 
   localStorage.setItem("UserData", JSON.stringify(Belonging_data))
+  document.getElementById("protect_checkbox").checked = false;
+
 }
 
 
@@ -79,6 +84,12 @@ function reinforce_success() {
   Belonging_data.nowstep = Belonging_data.nowstep+1;
   console.log('강화성공');
   step_data_show();
+
+  // 효과음 재생
+  let audio_success = new Audio("./sounds/success.mp3")
+  audio_success.loop = false;
+  audio_success.volume = 0.5;
+  audio_success.play();
 }
 
 //강화 실패 시
@@ -92,6 +103,12 @@ function reinforce_fail() {
   $('#protect_needs1').hide();
   $('#protect_cost').hide();
   $('#protect_needs2').hide();
+
+  // 효과음 재생
+  let audio_gameover = new Audio("./sounds/fail.mp3")
+  audio_gameover.loop = false;
+  audio_gameover.volume = 0.5;
+  audio_gameover.play();
 
   step_data_show();
 }
@@ -138,6 +155,8 @@ function showGameover() {
   // console.log("버튼")
   $('#fade').show();
   $('#light').show();
+
+
 }
 
 // 강화 불가 창 띄우기
@@ -216,8 +235,15 @@ function select_magic_uniform() {
 
 //아이템 개수 감소버튼
 function count_item_down() {
-  // 카운트가 0개일 시 작동하지 않음
-  if (num_of_item === 0) {
+  // 카운트가 1개일 시 최대 구매가능개수로 카운트
+  if (num_of_item === 1) {
+    num_of_item = Belonging_data.money / Item_data[selected-1]
+    console.log(num_of_item)
+    show_shop();
+  }
+  //아무것도 선택하지 않았을 시 작동하지 않음
+  else if (selected === 0) {
+    console.log("아이템 개수 증가 실패")
     return;
   }
   else {
@@ -228,8 +254,14 @@ function count_item_down() {
 
 //아이템 개수 증가버튼
 function count_item_up() {
-  //아무것도 선택하지 않았거나 더 구매할 수 없을 시 작동하지 않음
-  if (selected === 0 || Belonging_data.money < ((num_of_item+1)*Item_data[selected-1])) {
+  //최대 구매가능개수일 때 1로 리턴
+  if (num_of_item === Belonging_data.money / Item_data[selected-1]) {
+    num_of_item = 1
+    console.log(num_of_item)
+    show_shop();
+  }
+  //아무것도 선택하지 않았을 시 작동하지 않음
+  else if (selected === 0) {
     console.log("아이템 개수 증가 실패")
     return;
   }
@@ -326,15 +358,15 @@ function use_magic_uniform() {
 
 //단계에 따른 값 보여주기
 function step_data_show() {
-  //만약 15강이라면 파괴방지 보이기
-  if (Belonging_data.nowstep >= 15) {
+  //만약 10강이라면 파괴방지 보이기
+  if (Belonging_data.nowstep >= 10) {
     $('#protect').show();
     $('#protect_checkbox').show();
     $('#protect_needs1').show();
     $('#protect_cost').show();
     $('#protect_needs2').show();
   }
-  //15강 이내이거나 30강일 시 파괴방지 숨기기
+  //10강 이내이거나 30강일 시 파괴방지 숨기기
   else {
     $('#protect').hide();
     $('#protect_checkbox').hide();
