@@ -70,7 +70,7 @@ const Step_data = [
       step: 5,
       name: '+5 순간이동 능력자',
     //   picture: "./images/step_img/5.gif",
-      picture: "https://cdn.jsdelivr.net/gh/Dyract/queensmaker_img/step_img/5.gif",
+      picture: "./images/step_img/5.gif",
       probability : 95,
       reinforce_cost : 1500,
       sell_cost : 1600,
@@ -123,7 +123,7 @@ const Step_data = [
   {
       step: 10,
       name: '+10 중학생 무드등',
-      picture: "https://cdn.jsdelivr.net/gh/Dyract/queensmaker_img/step_img/10.gif",
+      picture: "./images/step_img/10.gif",
       probability : 80,
       reinforce_cost : 10900,
       sell_cost : 35100,
@@ -175,7 +175,7 @@ const Step_data = [
   {
       step: 15,
       name: '+15 고등학생 무드등',
-      picture: "https://cdn.jsdelivr.net/gh/Dyract/queensmaker_img/step_img/15.gif",
+      picture: "./images/step_img/15.gif",
       probability : 60,
       reinforce_cost : 180000,
       sell_cost : 7500000,
@@ -227,7 +227,7 @@ const Step_data = [
   {
       step: 20,
       name: '+20 메이드복 능력자',
-      picture: "https://cdn.jsdelivr.net/gh/Dyract/queensmaker_img/step_img/20.gif",
+      picture: "./images/step_img/20.gif",
       probability : 45,
       reinforce_cost : 15000000,
       sell_cost : 68300000,
@@ -280,7 +280,7 @@ const Step_data = [
   {
       step: 25,
       name: '+25 마법소녀 무드등',
-      picture: "https://cdn.jsdelivr.net/gh/Dyract/queensmaker_img/step_img/25.gif",
+      picture: "./images/step_img/25.gif",
       probability : 35,
       reinforce_cost : 30000000,
       sell_cost : 400000000,
@@ -332,7 +332,7 @@ const Step_data = [
   {
       step: 30,
       name: '+30 순간이동 능력자',
-      picture: "https://cdn.jsdelivr.net/gh/Dyract/queensmaker_img/step_img/30.gif",
+      picture: "./images/step_img/30.gif",
       probability : 100,
       reinforce_cost : 'Unknown',
       sell_cost : 'Unknown',
