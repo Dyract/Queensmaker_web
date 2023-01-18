@@ -69,7 +69,8 @@ const Step_data = [
   {
       step: 5,
       name: '+5 순간이동 능력자',
-      picture: "./images/step_img/5.gif",
+    //   picture: "./images/step_img/5.gif",
+      picture : "https://cdn.jsdelivr.net/gh/Dyract/Queensmaker_web.git/images/step_img/5.gif",
       probability : 95,
       reinforce_cost : 1500,
       sell_cost : 1600,
