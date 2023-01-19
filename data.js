@@ -12,7 +12,7 @@ let Belonging_data = {
   magic_uniform : 0
 }
 
-const Item_data = [1000000, 14200000, 101000000, 1800000000]
+const Item_data = [1000000, 7500000, 68300000, 400000000]
 
 
 const Step_data = [
@@ -21,8 +21,8 @@ const Step_data = [
       name: '+0 방울',
       picture: "./images/step_img/0.png",
       probability : 100,
-      reinforce_cost : 300,
-      sell_cost : 0,
+      reinforce_cost : 100,
+      sell_cost : 100,
       protect_cost : 0,
       script : "0강 스크립트"
   },
@@ -31,7 +31,7 @@ const Step_data = [
       name: '+1 미니등',
       picture: "./images/step_img/1.png",
       probability : 100,
-      reinforce_cost : 300,
+      reinforce_cost : 150,
       sell_cost : 150,
       protect_cost : 0,
       script : "1강 스크립트"
@@ -41,7 +41,7 @@ const Step_data = [
       name: '+2 유년기 무드등',
       picture: "./images/step_img/2.png",
       probability : 100,
-      reinforce_cost : 500,
+      reinforce_cost : 300,
       sell_cost : 400,
       protect_cost : 0,
       script : "2강 스크립트"

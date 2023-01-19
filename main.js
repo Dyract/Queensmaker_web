@@ -192,8 +192,9 @@ let num_of_item = 0;
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform.png)"});
   $('#pocari_button').css({"background-image":"url(./images/pocari_hover.png)"});
   selected = 1;
-  num_of_item = 1;
-  show_shop();
+  num_of_item = 0;
+  $('#count_item').text(num_of_item);
+  $('#price').text(Item_data[selected-1]);
  }
 
 //교복 선택 시
@@ -204,8 +205,9 @@ function select_school_uniform() {
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform.png)"});
   $('#pocari_button').css({"background-image":"url(./images/pocari.png)"});
   selected = 2;
-  num_of_item = 1;
-  show_shop();
+  num_of_item = 0;
+  $('#count_item').text(num_of_item);
+  $('#price').text(Item_data[selected-1]);
 }
 
 //메이드복 선택 시
@@ -216,8 +218,9 @@ function select_made_uniform() {
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform.png)"});
   $('#pocari_button').css({"background-image":"url(./images/pocari.png)"});
   selected = 3;
-  num_of_item = 1;
-  show_shop();
+  num_of_item = 0;
+  $('#count_item').text(num_of_item);
+  $('#price').text(Item_data[selected-1]);
 }
 
 //마법소녀 선택 시
@@ -228,16 +231,17 @@ function select_magic_uniform() {
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform_hover.png)"});
   $('#pocari_button').css({"background-image":"url(./images/pocari.png)"});
   selected = 4;
-  num_of_item = 1;
-  show_shop();
+  num_of_item = 0;
+  $('#count_item').text(num_of_item);
+  $('#price').text(Item_data[selected-1]);
   
 }
 
 //아이템 개수 감소버튼
 function count_item_down() {
   // 카운트가 1개일 시 최대 구매가능개수로 카운트
-  if (num_of_item === 1) {
-    num_of_item = Belonging_data.money / Item_data[selected-1]
+  if (num_of_item === 0) {
+    num_of_item = Math.floor(Belonging_data.money / Item_data[selected-1])
     console.log(num_of_item)
     show_shop();
   }
@@ -254,12 +258,15 @@ function count_item_down() {
 
 //아이템 개수 증가버튼
 function count_item_up() {
-  //최대 구매가능개수일 때 1로 리턴
-  if (num_of_item === Belonging_data.money / Item_data[selected-1]) {
-    num_of_item = 1
+  //최대 구매가능개수일 때 0로 리턴
+  if (num_of_item === Math.floor(Belonging_data.money / Item_data[selected-1])) {
+    num_of_item = 0
     console.log(num_of_item)
     show_shop();
   }
+  // else if (Belonging_data.money < Item_data[selected-1]*(num_of_item+1)) {
+  //   show_shop();
+  // }
   //아무것도 선택하지 않았을 시 작동하지 않음
   else if (selected === 0) {
     console.log("아이템 개수 증가 실패")
