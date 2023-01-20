@@ -294,9 +294,9 @@ const Step_data = [
       name: '+26 피고소인 무드등',
       picture: "./images/step_img/26.png",
       probability : 30,
-      reinforce_cost : 60000000,
-      sell_cost : 1800000000,
-      protect_cost : 60,
+      reinforce_cost : 40000000,
+      sell_cost : 600000000,
+      protect_cost : 45,
       script : "단지우유에게 고소를 당한 무드등이다."
   },
   {
@@ -304,9 +304,9 @@ const Step_data = [
       name: '+27 고소공포증 무드등',
       picture: "./images/step_img/27.png",
       probability : 20,
-      reinforce_cost : 100000000,
-      sell_cost : 2500000000,
-      protect_cost : 75,
+      reinforce_cost : 50000000,
+      sell_cost : 1000000000,
+      protect_cost : 60,
       script : "부산에서 비행기를 타고 오다가 기절한 무드등이다."
   },
   {
@@ -314,9 +314,9 @@ const Step_data = [
       name: '+28 견주 무드등',
       picture: "./images/step_img/28.png",
       probability : 10,
-      reinforce_cost : 300000000,
-      sell_cost : 4000000000,
-      protect_cost : 90,
+      reinforce_cost : 60000000,
+      sell_cost : 2000000000,
+      protect_cost : 70,
       script : "새로운 가족 등장! 구름이와 함께 있는 무드등이다."
   },
   {
@@ -324,14 +324,14 @@ const Step_data = [
       name: '+29 폭스등',
       picture: "./images/step_img/29.png",
       probability : 5,
-      reinforce_cost : 500000000,
-      sell_cost : 5000000000,
-      protect_cost : 120,
+      reinforce_cost : 75000000,
+      sell_cost : 3000000000,
+      protect_cost : 100,
       script : "술에 취해 여우짓을 하는 무드등이다."
   },
   {
       step: 30,
-      name: '+30 순간이동 능력자',
+      name: '+30 Queen',
       picture: "./images/step_img/30.gif",
       probability : 100,
       reinforce_cost : 'Unknown',

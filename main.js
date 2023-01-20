@@ -82,6 +82,12 @@ function sell() {
   localStorage.setItem("UserData", JSON.stringify(Belonging_data))
   document.getElementById("protect_checkbox").checked = false;
 
+    // 효과음 재생
+    let audio_success = new Audio("./sounds/sell.mp3")
+    audio_success.loop = false;
+    audio_success.volume = 0.8;
+    audio_success.play();
+
 }
 
 
@@ -140,6 +146,12 @@ function protect_success() {
   // console.log("파괴방지 성공")
   $('#fade').show();
   $('#light3').show();
+
+    // 효과음 재생
+    let audio_gameover = new Audio("./sounds/protect.mp3")
+    audio_gameover.loop = false;
+    audio_gameover.volume = 0.8;
+    audio_gameover.play();
 }
 
 // 파괴방지 성공 시 창 닫기
@@ -160,6 +172,7 @@ function closeGameover() {
 function showGameover() {
   $('#destroyed_step').text(Step_data[Belonging_data.nowstep].name);
   // console.log("버튼")
+  bgm_off()
   $('#fade').show();
   $('#light').show();
 
@@ -415,11 +428,11 @@ function inventory_show() {
   $('#magic_uniform_count').text(Belonging_data.magic_uniform);
 }
 
-
+var audio_bgm = document.getElementById("bgm_audio")
 
 //배경음 틀기
 function bgm_on() {
-  var audio_bgm = document.getElementById("bgm_audio")
+
   // audio_bgm.muted = true;
   audio_bgm.volume = 0.3;
   audio_bgm.loop = true;
@@ -429,5 +442,5 @@ function bgm_on() {
 }
 
 function bgm_off() {
-  audio_bgm.stop
+  audio_bgm.pause();
 }

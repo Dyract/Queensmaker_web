@@ -67,8 +67,8 @@
   }
 
   .credit_text{
-    display: none;
-    position: absolute;
+    /* display: none; */
+    position: relative;
     font-family: 'Dokdo' !important;
     font-size: 40px;
     text-align: center;
@@ -79,7 +79,7 @@
   }
 
   .credit_page{
-    position: absolute;
+    position: relative;
     width:1048px;
     height: 680px;
     display: flex;
@@ -93,11 +93,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .close_button {
     position: relative;
-    top: 130px;
+    top: 15px;
     height: 30px;
+  }
+
+  .meam_wrapper {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    left: 22px;
+  }
+
+  .meam_text1 {
+    /* height: 53px; */
+    width: 55px;
+    object-fit: contain;
+    /* border: 1px solid saddlebrown; */
+  }
+
+    .meam_text2 {
+    /* height: 53px; */
+    width: 55px;
+    object-fit: contain;
+    /* border: 1px solid saddlebrown; */
+    position: relative;
+    right: 20px;
+  }
+
+    .meam_text3 {
+    /* height: 53px; */
+    width: 55px;
+    object-fit: contain;
+    /* border: 1px solid saddlebrown; */
+    position: relative;
+    right: 40px;
   }

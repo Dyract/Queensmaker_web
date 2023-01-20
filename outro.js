@@ -24,7 +24,7 @@ function outro() {
         $( '#fade' ).fadeIn( 2000 );
         $( '#light' ).fadeIn( 2000 );
         $( '#credit_text' ).fadeIn( 2000 );
-    }, 15000);
+    }, 20000);
     
 }
 
