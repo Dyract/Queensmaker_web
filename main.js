@@ -9,10 +9,11 @@ if (storageItems) {
 }
 // console.log(Belonging_data)
 // Belonging_data.money = 10000000;
-// Belonging_data.nowstep = 0;
+// Belonging_data.nowstep = 30;
 step_data_show();
 money_data_show();
-inventory_show()
+inventory_show();
+bgm_on();
 
 // ************* //
 //  메인페이지 로직  //
@@ -24,6 +25,11 @@ function reinforce() {
   // 15강부터 파괴방지 버튼 표시
   // 실패 시 파괴, 파괴방지가 체크되어 있을 경우 현상유지 및 방지권 차감
   // 방지권이 부족할 때 파괴방지를 체크하여 강화하면 메시지와 함께 현상유지, 방지권 차감x
+
+  // 30강인 경우 엔딩
+  if(Belonging_data.nowstep >= 30) {
+    location.href = 'outro.html';
+  }
 
   random_number = Math.floor(Math.random() * 101); //랜덤값 생성
 
@@ -88,7 +94,7 @@ function reinforce_success() {
   // 효과음 재생
   let audio_success = new Audio("./sounds/success.mp3")
   audio_success.loop = false;
-  audio_success.volume = 0.5;
+  audio_success.volume = 0.8;
   audio_success.play();
 }
 
@@ -107,7 +113,7 @@ function reinforce_fail() {
   // 효과음 재생
   let audio_gameover = new Audio("./sounds/fail.mp3")
   audio_gameover.loop = false;
-  audio_gameover.volume = 0.5;
+  audio_gameover.volume = 0.8;
   audio_gameover.play();
 
   step_data_show();
@@ -408,3 +414,16 @@ function inventory_show() {
   $('#magic_uniform_count').text(Belonging_data.magic_uniform);
 }
 
+let audio_bgm = document.getElementById("bgm_audio")
+
+//배경음 틀기
+function bgm_on() {
+  audio_bgm.volume = 0.3;
+  audio_bgm.loop = true;
+  
+  audio_bgm.play();
+}
+
+function bgm_off() {
+  audio_bgm.stop
+}

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Nanum+Brush+Script&display=swap');
+
+.outro_text{
+    /* display: none; */
+    position: absolute;
+    padding: 16px;
+    font-family: 'Dokdo' !important;
+    font-size: 40px;
+    /* border: 16px solid darkblue; */
+    /* background-image: url("./images/destroy-img.png"); */
+    z-index:1;
+    overflow: auto;
+  }

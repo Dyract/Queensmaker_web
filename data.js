@@ -5,7 +5,7 @@
 
 let Belonging_data = {
   nowstep : 0,
-  money : 1000000,
+  money : 1500000,
   pocari_sweat : 0,
   school_uniform : 0,
   made_uniform : 0,
@@ -22,7 +22,7 @@ const Step_data = [
       picture: "./images/step_img/0.png",
       probability : 100,
       reinforce_cost : 100,
-      sell_cost : 100,
+      sell_cost : 0,
       protect_cost : 0,
       script : "0강 스크립트"
   },
