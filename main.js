@@ -13,7 +13,7 @@ if (storageItems) {
 step_data_show();
 money_data_show();
 inventory_show();
-bgm_on();
+// bgm_on();
 
 // ************* //
 //  메인페이지 로직  //
@@ -21,6 +21,7 @@ bgm_on();
 
 //강화 함수
 function reinforce() {
+  bgm_on();
   // 랜덤으로 지정한 값이 확률값보다 작을 경우 성공, 클 경우 실패
   // 15강부터 파괴방지 버튼 표시
   // 실패 시 파괴, 파괴방지가 체크되어 있을 경우 현상유지 및 방지권 차감
@@ -422,9 +423,9 @@ function bgm_on() {
   // audio_bgm.muted = true;
   audio_bgm.volume = 0.3;
   audio_bgm.loop = true;
-  
-  audio_bgm.play();
   audio_bgm.muted = false;
+  audio_bgm.play();
+  
 }
 
 function bgm_off() {
