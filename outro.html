@@ -11,14 +11,27 @@
 </head>
 <body>
     <!-- 게임 전체를 감싸는 틀-->
-    <div id="background_start" class="start_wrapper">
+    <div id="background_start" class="outro_wrapper">
+        <div class="top_of_outro">2023 취한무드등 생일 기념 팬게임 : Queensmaker</div>
+        <img id = "outro_img" class="outro_img" src="./images/outro_background.png">
+    </div>
+    <div id="text1" class="outro_text">이렇게 취한무드등은 우여곡절 끝에</div>
+    <div id="text2" class="outro_text">최강의 여성 대장장이가 되었답니다.</div>
+
+    <div id="fade" class="black_background"></div>
+    <!-- 게임오벼 화면 -->
+    <div id="light" >
+        <div class="credit_page">
+            <div class="credit_text_wrapper">
+                <div id="credit_text" class="credit_text">총괄 : 라프사<br>일러스트 : 믬믬믬<br>프로그래밍:랴프마<br>배경 일러스트 제공 : 무드등아님, 보네몬</div>
+            </div>
+            <button class="close_button" onclick="closeoutro();">다시하기</button>
+        </div>
 
     </div>
-    <div class="outro_text">아아아</div>
-    <div class="outro_text">아아아아아아</div>
-
     
-    
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="outro.js"></script>
+    
 
 </body>

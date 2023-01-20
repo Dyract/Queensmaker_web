@@ -1,5 +1,5 @@
 window.addEventListener("load", (event) => {
-    console.log("load");
+    // console.log("load");
     scroll()
 });
 
@@ -15,7 +15,7 @@ function scroll() {
 function scroll_img() {
     currentY = currentY - 5
     $('#background_start').scrollTop( currentY );
-    console.log(currentY)
+    // console.log(currentY)
 }
 
 function show_logo() {

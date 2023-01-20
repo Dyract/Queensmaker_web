@@ -1,6 +1,6 @@
 //기존 데이터 불러오기
 const storageItems = JSON.parse(localStorage.getItem("UserData"))
-console.log(localStorage.getItem("UserData"))
+// console.log(localStorage.getItem("UserData"))
 // console.log(storageItems)
 // console.log(Belonging_data)
 
@@ -88,7 +88,7 @@ function sell() {
 function reinforce_success() {
   Belonging_data.money = Belonging_data.money - Step_data[Belonging_data.nowstep].reinforce_cost
   Belonging_data.nowstep = Belonging_data.nowstep+1;
-  console.log('강화성공');
+  // console.log('강화성공');
   step_data_show();
 
   // 효과음 재생
@@ -121,14 +121,14 @@ function reinforce_fail() {
 
 //파괴방지 실패 시
 function protect_fail() {
-  console.log("파괴방지 실패")
+  // console.log("파괴방지 실패")
   $('#fade').show();
   $('#light2').show();
 }
 
 // 파괴방지 실패 창 닫기
 function closeGameover2() {
-  console.log("버튼")
+  // console.log("버튼")
   $('#fade').hide();
   $('#light2').hide();
 }
@@ -136,14 +136,14 @@ function closeGameover2() {
 //파괴방지 성공 시
 function protect_success() {
   Belonging_data.money = Belonging_data.money - Step_data[Belonging_data.nowstep].reinforce_cost
-  console.log("파괴방지 성공")
+  // console.log("파괴방지 성공")
   $('#fade').show();
   $('#light3').show();
 }
 
 // 파괴방지 성공 시 창 닫기
 function closeGameover3() {
-  console.log("버튼")
+  // console.log("버튼")
   $('#fade').hide();
   $('#light3').hide();
 }
@@ -186,13 +186,13 @@ function closeGameover4() {
 // ********* //
 
 // 1포카리나 2교복 3메이드복 4마법소녀복
-let selected = 0;
+var selected = 0;
 // 아이템 구매 개수
-let num_of_item = 0;
+var num_of_item = 0;
 
  //포카리나 선택 시
  function select_pocarina() {
-  console.log("포카리나 버튼 클릭")
+  // console.log("포카리나 버튼 클릭")
   $('#school_uniform_button').css({"background-image":"url(./images/school_uniform.png)"});
   $('#made_uniform_button').css({"background-image":"url(./images/made_uniform.png)"});
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform.png)"});
@@ -205,7 +205,7 @@ let num_of_item = 0;
 
 //교복 선택 시
 function select_school_uniform() {
-  console.log("교복 버튼 클릭")
+  // console.log("교복 버튼 클릭")
   $('#school_uniform_button').css({"background-image":"url(./images/school_uniform_hover.png)"});
   $('#made_uniform_button').css({"background-image":"url(./images/made_uniform.png)"});
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform.png)"});
@@ -218,7 +218,7 @@ function select_school_uniform() {
 
 //메이드복 선택 시
 function select_made_uniform() {
-  console.log("메이드복 버튼 클릭")
+  // console.log("메이드복 버튼 클릭")
   $('#school_uniform_button').css({"background-image":"url(./images/school_uniform.png)"});
   $('#made_uniform_button').css({"background-image":"url(./images/made_uniform_hover.png)"});
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform.png)"});
@@ -231,7 +231,7 @@ function select_made_uniform() {
 
 //마법소녀 선택 시
 function select_magic_uniform() {
-  console.log("마법소녀복 버튼 클릭")
+  // console.log("마법소녀복 버튼 클릭")
   $('#school_uniform_button').css({"background-image":"url(./images/school_uniform.png)"});
   $('#made_uniform_button').css({"background-image":"url(./images/made_uniform.png)"});
   $('#magic_uniform_button').css({"background-image":"url(./images/magic_uniform_hover.png)"});
@@ -248,12 +248,12 @@ function count_item_down() {
   // 카운트가 1개일 시 최대 구매가능개수로 카운트
   if (num_of_item === 0) {
     num_of_item = Math.floor(Belonging_data.money / Item_data[selected-1])
-    console.log(num_of_item)
+    // console.log(num_of_item)
     show_shop();
   }
   //아무것도 선택하지 않았을 시 작동하지 않음
   else if (selected === 0) {
-    console.log("아이템 개수 증가 실패")
+    // console.log("아이템 개수 증가 실패")
     return;
   }
   else {
@@ -267,7 +267,7 @@ function count_item_up() {
   //최대 구매가능개수일 때 0로 리턴
   if (num_of_item === Math.floor(Belonging_data.money / Item_data[selected-1])) {
     num_of_item = 0
-    console.log(num_of_item)
+    // console.log(num_of_item)
     show_shop();
   }
   // else if (Belonging_data.money < Item_data[selected-1]*(num_of_item+1)) {
@@ -275,7 +275,7 @@ function count_item_up() {
   // }
   //아무것도 선택하지 않았을 시 작동하지 않음
   else if (selected === 0) {
-    console.log("아이템 개수 증가 실패")
+    // console.log("아이템 개수 증가 실패")
     return;
   }
   else {
@@ -287,9 +287,9 @@ function count_item_up() {
 //아이템 구매버튼을 누를 시
 function buyItem() {
   if (selected === 0 || Belonging_data.money < ((num_of_item)*Item_data[selected-1])) {
-    console.log((num_of_item)*Item_data[selected-1])
-    console.log(Belonging_data.money)
-    console.log("구매 실패")
+    // console.log((num_of_item)*Item_data[selected-1])
+    // console.log(Belonging_data.money)
+    // console.log("구매 실패")
     return;
   }
   else {
@@ -399,7 +399,7 @@ function step_data_show() {
 
 //돈 업데이트
 function money_data_show() {
-  console.log("money값 출력")
+  // console.log("money값 출력")
   $('#money_shop').text(Belonging_data.money);
   $('#money_inventory').text(Belonging_data.money);
   $('#money_main').text(Belonging_data.money);
@@ -407,21 +407,24 @@ function money_data_show() {
 
 //인벤토리 업데이트
 function inventory_show() {
-  console.log("인벤토리 출력")
+  // console.log("인벤토리 출력")
   $('#pocari_count').text(Belonging_data.pocari_sweat);
   $('#school_uniform_count').text(Belonging_data.school_uniform);
   $('#made_uniform_count').text(Belonging_data.made_uniform);
   $('#magic_uniform_count').text(Belonging_data.magic_uniform);
 }
 
-let audio_bgm = document.getElementById("bgm_audio")
+
 
 //배경음 틀기
 function bgm_on() {
+  var audio_bgm = document.getElementById("bgm_audio")
+  // audio_bgm.muted = true;
   audio_bgm.volume = 0.3;
   audio_bgm.loop = true;
   
   audio_bgm.play();
+  audio_bgm.muted = false;
 }
 
 function bgm_off() {

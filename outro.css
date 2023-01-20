@@ -1,13 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Dokdo&family=Nanum+Brush+Script&display=swap');
 
-.outro_text{
-    /* display: none; */
-    position: absolute;
-    padding: 16px;
+.top_of_outro {
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction : column;
     font-family: 'Dokdo' !important;
     font-size: 40px;
+}
+
+.outro_text{
+    display: none;
+    position: absolute;
+    font-family: 'Dokdo' !important;
+    font-size: 40px;
+    text-align: center;
     /* border: 16px solid darkblue; */
     /* background-image: url("./images/destroy-img.png"); */
     z-index:1;
     overflow: auto;
+  }
+
+  /* 게임 틀 */
+.outro_wrapper {
+    width: 1080px;
+    height: 720px;
+    display: flex;
+    flex-direction : column;
+    background-image: url('./images/background_main.png');
+
+    border : 1px solid black;
+}
+
+/* 일러스트 */
+.outro_img {
+    display: none;
+}
+
+
+/* 크래딧페이지 */
+.black_background{
+    display: none;
+    position: absolute;
+    /* top: 0%;
+    left: 0%; */
+    width: 1080px;
+    height: 720px;
+    background: #ffffff ;
+    z-index:1000;
+    -moz-opacity: 0.8;
+    opacity:.70;
+    filter: alpha(opacity=60);
+  }
+  
+  #light{
+    display: none;
+    position: absolute;
+    padding: 16px;
+    width:1080px;
+    height: 720px;
+    /* border: 16px solid #E3F2FC; */
+    /* background-image: url("./images/destroy-img.png"); */
+    z-index:1001;
+    overflow: auto;
+  }
+
+  .credit_text{
+    display: none;
+    position: absolute;
+    font-family: 'Dokdo' !important;
+    font-size: 40px;
+    text-align: center;
+    /* border: 16px solid darkblue; */
+    /* background-image: url("./images/destroy-img.png"); */
+    z-index:1;
+    overflow: auto;
+  }
+
+  .credit_page{
+    position: absolute;
+    width:1048px;
+    height: 680px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: 1px solid purple; */
+  }
+
+  .credit_text_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .close_button {
+    position: relative;
+    top: 130px;
+    height: 30px;
   }
